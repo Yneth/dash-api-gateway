@@ -1,5 +1,11 @@
+server:
+  port: ${PORT:9402}
 spring:
-  mvc:
-    static-path-pattern: /**
-
-server.port: 8081
+  application:
+    name: gateway-api-service
+sidecar:
+  port: ${SIDECAR_PORT:9402}
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9401/eureka/
